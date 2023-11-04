@@ -10,7 +10,7 @@ html {
   body {
     min-width: 320px;
     font-weight: 400;
-    font-family: "Muller", sans-serif;
+    font-family: "Roboto", sans-serif;
 
     img {
       max-width: 100%;
@@ -43,4 +43,9 @@ html {
       margin: 0;
     }
   }
+}
+
+.main_layout {
+  position: relative;
+  padding-left: 300px;
 }

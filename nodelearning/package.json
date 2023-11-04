@@ -6,19 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "json-server -w DB.json -p 4200 -d 2000"
   },
   "dependencies": {
     "nanoid": "^5.0.2",
     "next": "14.0.1",
+    "nextjs-progressbar": "^0.0.16",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.3.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "sass": "^1.69.5",

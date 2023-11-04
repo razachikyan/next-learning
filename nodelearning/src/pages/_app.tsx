@@ -1,10 +1,14 @@
-import { Layout } from "@/components/Layout";
+import type { AppProps } from "next/app";
+import NextNProgress from "nextjs-progressbar";
 
 import "@/styles/normalize.scss";
 import "@/styles/styles.scss";
 
-const App = () => {
-  return <Layout>Hello</Layout>;
-};
-
-export default App;
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <NextNProgress height={10} color="darkred" />
+      <Component {...pageProps} />;
+    </>
+  );
+}

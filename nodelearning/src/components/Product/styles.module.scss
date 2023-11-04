@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  max-width: 32.5%;
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .name {
+    font-weight: 800;
+    font-size: 23px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: darkblue;
+  }
+
+  .descr {
+    font-size: 20px;
+    color: darkred;
+  }
+
+  .number {
+    font-size: 17px;
+    color: darkgreen;
+    font-weight: bold;
+    align-self: flex-end;
+  }
+}

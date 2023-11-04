@@ -1,7 +1,7 @@
 import { INavBarProps } from "./types";
+import { nanoid } from "nanoid";
 
 import styles from "./styles.module.scss";
-import { nanoid } from "nanoid";
 
 export const NavBar = ({ items }: INavBarProps) => {
   return (

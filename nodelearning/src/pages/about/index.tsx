@@ -4,19 +4,19 @@ import { NavBar } from "@/components/NavBar";
 
 import styles from "./styles.module.scss";
 
-const General = () => {
+const Post = () => {
   const links = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
   ];
   return (
-    <Layout>
+    <Layout title="About">
       <main className={styles.main}>
-        <h1>Home</h1>
+        <h1>About</h1>
         <NavBar
           items={links.map((link) => (
-            <Link href={link.href} className={styles.link}>
+            <Link className={styles.link} href={link.href}>
               {link.name}
             </Link>
           ))}
@@ -26,4 +26,4 @@ const General = () => {
   );
 };
 
-export default General;
+export default Post;
