@@ -69,6 +69,7 @@ const Login = () => {
             />
           </div>
           <button
+            disabled={loading}
             onClick={async (e) => {
               e.preventDefault();
               if (isValid) {

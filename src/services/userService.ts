@@ -6,7 +6,7 @@ export class UserService {
   private base_url = String(process.env.NEXT_PUBLIC_BASE_URL);
 
   public async login(username: string, password: string) {
-    const response = await fetch(`${this.base_url}/login`, {
+    await fetch(`${this.base_url}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,12 +17,18 @@ export class UserService {
       }),
       credentials: "include",
     });
+  }
+
+  public async checkUser(sessionId: string): Promise<{ username: string }> {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/user/${sessionId}`
+    );
     const data = await response.json();
-    console.log(data);
+    return data;
   }
 
   public async signin(username: string, password: string) {
-    const response = await fetch(`${this.base_url}/signup`, {
+    await fetch(`${this.base_url}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,11 +38,9 @@ export class UserService {
         password,
       }),
     });
-
-    console.log(response);
   }
 
-  public logout(username: string, password: string) {
-    axios.post(`${this.base_url}/signin`, { username, password });
+  public async logout(username: string) {
+    await axios.post(`${this.base_url}/logout`, { username });
   }
 }

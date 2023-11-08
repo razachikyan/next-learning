@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { MoonLoader } from "react-spinners";
+import { useRouter } from "next/router";
 import { Layout } from "@/components/Layout";
 import { UserService } from "@/services/userService";
 import Link from "next/link";
 
 import styles from "./styles.module.scss";
-import { MoonLoader } from "react-spinners";
 
 const SignUp = () => {
   const [username, setUsername] = useState<string>("");
@@ -16,6 +17,8 @@ const SignUp = () => {
   const [isValidConfirmPassword, setIsValidConfirmPassword] =
     useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     setIsValidUsername(username.length > 3 && username.length < 20);
@@ -83,11 +86,13 @@ const SignUp = () => {
             />
           </div>
           <button
+            disabled={loading}
             onClick={(e) => {
               setLoading(true);
               e.preventDefault();
               setLoading(false);
               isValid && setvice.signin(username, password);
+              router.push("/");
             }}
           >
             Submit
